@@ -1,0 +1,59 @@
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Oswald|Roboto+Mono&display=swap');
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    color: white;
+    background-color: black; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif ;
+    text-rendering: optimizeLegibility;
+}
+
+.container .card {
+    top: 50vh;
+    transform: translateY(-50%);
+    h1 {
+        font-family: 'Roboto Mono', monospace;
+    }
+    h5 {
+        letter-spacing: 0.6pt;
+    }
+}
+
+.mono {
+    font-family: 'Robot Mono', monospace;
+}
+
+.nav-link:hover {
+    text-decoration: underline; 
+}
+
+select {
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.inverse {
+    background-color: white;
+    filter: invert(1);
+    text-rendering: optimizeLegibility;
+    font-weight: bold;
+}
+
+@media only screen and (min-width:768px) {
+    .container .card {
+        top: 40vh;
+    }
+}
