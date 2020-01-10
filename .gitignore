@@ -61,3 +61,4 @@ typings/
 
 # parcel build output
 /web/dist/
+/web/.cache/
