@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "version": "0.0.1",
+  "description": "Ayurvedic unit converter rest API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Ayurveda",
+    "API",
+    "rest",
+    "units",
+    "convert"
+  ],
+  "author": "Sid",
+  "license": "MIT",
+  "dependencies": {
+    "server": "^1.0.19"
+  }
+}
