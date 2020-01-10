@@ -16,6 +16,6 @@
   "author": "Sid",
   "license": "MIT",
   "dependencies": {
-    "server": "^1.0.19"
+    "server": "^1.0.21"
   }
 }

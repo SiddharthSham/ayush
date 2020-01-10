@@ -16,15 +16,15 @@
   "license": "MIT",
   "dependencies": {
     "aos": "^2.3.4",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   },
   "devDependencies": {
-    "@parcel/logger": "^1.11.0",
+    "@parcel/logger": "^1.11.1",
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.21.0"
+    "sass": "^1.24.4"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.common.js"
