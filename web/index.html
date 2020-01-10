@@ -22,7 +22,7 @@
         <!--    Navbar     -->
         <nav class="navbar navbar-expand-lg navbar-light" data-aos="fade-in" data-aos-duration="800">
             <a class="navbar-brand" href="#">
-                <h1 class="font-weight-bold">CONVERTER.</h1>
+                <h1 class="font-weight-bold">AYUSH</h1>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,19 +32,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item pr-2">
-                        <a class="nav-link" href="#">
-                            <h4 class="mono">Blog</h4>
+                        <a class="nav-link" href="./data-sheet.html" target="_blank">
+                            <h4 class="mono">Datasheet</h4>
                         </a>
                     </li>
                     <li class="nav-item pr-2">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="https://www.youtube.com/results?search_query=ayurveda" target="_blank">
                             <h4 class="mono">Videos</h4>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
                             href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me"
-                            target="new">
+                            target="_blank">
                             <h4 class="mono">Hospitals</h4>
                         </a>
                     </li>
@@ -55,11 +55,11 @@
     </div>
 
     <!--    Main body    -->
-    <div class="container pt-3" data-aos="fade-up" data-aos-duration="600">
-        <div class="row">
-            <main class="card shadow p-3" id="app">
+    <div class="container pt-3" data-aos-duration="600">
+        <div class="row" data-aos="fade-up">
+            <main class="card shadow p-3" id="app" >
                 <!--    Card title    -->
-                <div class="card-title p-3 mb-0">
+                <div class="card-title p-3 mb-0" data-aos="fade-in">
                     <h3 class="pb-0"> {{ metric }} converter</h3>
                 </div>
                 <!--    Card body    -->
@@ -124,6 +124,15 @@
                 </div>
             </main>
             <!--    End card    -->
+        </div>
+        <h1 style="text-align: center;" class="pad-xtra" data-aos="fade-up" data-aos-delay="200">OR</h1>
+        <!-- <img src="./images/arrow.svg" class="arrow" alt="down arrow"> -->
+        <div class="row">
+            <div class="card shadow" data-aos="fade-up">
+                <iframe class="bot" allow="microphone;"
+                    src="https://console.dialogflow.com/api-client/demo/embedded/2856095e-0eca-4e22-ab64-d6e12cd1bded"></iframe>
+            </div>
+            <h6 class="pad mono" data-aos="fade-up">Hint: Try saying "how many grams is 1 ratti?"</h6>
         </div>
     </div>
 </body>
