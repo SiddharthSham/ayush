@@ -1,32 +1,20 @@
 {
   "name": "ayush",
   "version": "1.0.0",
-  "description": "Ayush",
-  "main": "index.html",
+  "description": "Online Ayurvedic Unit Converter",
+  "author": "siddharthsham",
+  "private": true,
   "scripts": {
-    "dev": "parcel index.html",
-    "build": "parcel build index.html --out-dir docs --no-source-maps --public-url ./"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
   },
-  "keywords": [
-    "ayush",
-    "ayurveda",
-    "converter"
-  ],
-  "author": "Sid",
-  "license": "MIT",
   "dependencies": {
-    "aos": "^2.3.4",
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "vue": "^2.6.11"
+    "bulma": "^0.8.0",
+    "nuxt": "^2.0.0"
   },
   "devDependencies": {
-    "@parcel/logger": "^1.11.1",
-    "cssnano": "^4.1.10",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.24.4"
-  },
-  "alias": {
-    "vue": "./node_modules/vue/dist/vue.common.js"
+    "cross-env": "^7.0.0"
   }
 }
