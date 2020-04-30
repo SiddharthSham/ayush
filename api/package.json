@@ -1,10 +1,10 @@
 {
-  "name": "api",
-  "version": "0.0.1",
+  "name": "ayushapi",
+  "version": "1.0.0",
   "description": "Ayurvedic unit converter rest API",
-  "main": "app.js",
+  "main": "api.js",
   "scripts": {
-    "start": "node index.js"
+    "dev": "node api.js"
   },
   "keywords": [
     "Ayurveda",
@@ -16,6 +16,9 @@
   "author": "Sid",
   "license": "MIT",
   "dependencies": {
-    "server": "^1.0.21"
-  }
+    "dotenv": "^8.2.0",
+    "helmet": "^3.22.0",
+    "server": "^1.0.27"
+  },
+  "devDependencies": {}
 }

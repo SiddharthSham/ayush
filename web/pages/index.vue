@@ -108,9 +108,14 @@
           <iframe class="bot" allow="microphone;"
             src="https://console.dialogflow.com/api-client/demo/embedded/2856095e-0eca-4e22-ab64-d6e12cd1bded"></iframe>
         </div>
-        <h6 class="is-family-monospace is-size-6 pad-top-s has-text-grey">Hint: Try saying "how many grams is 1 ratti?"</h6>
+        <h6 class="is-family-monospace is-size-6 pad-top-s has-text-grey">Hint: Try saying "how many grams is 1 ratti?"
+        </h6>
       </div>
     </div>
+
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger intent="WELCOME" chat-title="AYUSH"
+      agent-id="2856095e-0eca-4e22-ab64-d6e12cd1bded" language-code="en"></df-messenger>
   </div>
 </template>
 
@@ -118,9 +123,7 @@
   import Card from '~/components/Card'
   import * as data from '~/static/data.json';
 
-
   export default {
-
     components: {
       Card
     },
@@ -270,6 +273,15 @@
   .hero-body {
     justify-content: center;
     flex-direction: column;
+  }
+
+  df-messenger {
+   --df-messenger-bot-message: #878fac;
+   --df-messenger-button-titlebar-color: #000;
+   --df-messenger-chat-background-color: #fafafa;
+   --df-messenger-font-color: white;
+   --df-messenger-send-icon: #878fac;
+   --df-messenger-user-message: #479b3d;
   }
 
   .control,

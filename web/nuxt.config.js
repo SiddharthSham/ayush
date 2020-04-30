@@ -7,6 +7,11 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
 
 export default {
   mode: 'spa',
+  vue: {
+    config: {
+      ignoredElements: ['df-messenger']
+    }
+  },
   /*
   ** Headers of the page
   */

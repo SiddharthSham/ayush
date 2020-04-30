@@ -1,6 +1,9 @@
 const server = require('server');
 const { get } = server.router;
-const main = require('./main.js');
+const helmet = require('helmet')({});
+const helmetInstance = server.utils.modern(helmet);
+
+const main = require('./methods.js');
 
 // API endpoints
 const api = [
@@ -27,6 +30,21 @@ const api = [
 ];
 
 // Launch server
-server(api);
-console.log("Server started!")
+server(
+  { port: 3000 }, 
+  ctx => console.log('Mode:', ctx.options.env),
+  api,
+  ).catch(err => console.log(err));
+
+console.log("Server started on port 3000!")
+console.log('\n')
+console.log('Available routes:')
+console.log('/convert/data')
+console.log('/convert/:system/:author/:metric/:convert_from/:convert_to/:value')
+console.log('/convert/systems')
+console.log('/convert/:system/authors')
+console.log('/convert/:system/:author/metrics')
+console.log('/convert/:system/:author/:metric/units')
+console.log('/convert/:system/:author/:metric/values')
+
 
