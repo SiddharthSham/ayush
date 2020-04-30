@@ -4,12 +4,12 @@
 
       <div class="hero-body">
         <div class="columns">
-          <div class="column">
+          <div class="column outer">
             <main class="card" id="app">
               <!--    Card body    -->
               <div class="card-content">
                 <h3 class="title has-text-weight-normal"> {{ metric }} converter</h3>
-                <div class="columns ">
+                <div class="columns">
                   <!--    Card left pane    -->
                   <div class="column is-half">
                     <h1 class="is-size-3 is-family-monospace">{{ in_value }} {{ from }} is equivalent to {{ out_value }}
@@ -104,18 +104,23 @@
     </section>
     <div class="hero is-fullheight">
       <div class="hero-body">
-        <div class="card">
-          <iframe class="bot" allow="microphone;"
-            src="https://console.dialogflow.com/api-client/demo/embedded/2856095e-0eca-4e22-ab64-d6e12cd1bded"></iframe>
+        <div class="columns">
+          <div class="column outer">
+            <div class="card">
+              <iframe class="bot" allow="microphone;"
+                src="https://console.dialogflow.com/api-client/demo/embedded/2856095e-0eca-4e22-ab64-d6e12cd1bded"></iframe>
+            </div>
+            <h6 class="is-family-monospace is-size-6 pad-top-s has-text-grey">Hint: Try saying "how many grams is 1
+              ratti?"
+            </h6>
+          </div>
         </div>
-        <h6 class="is-family-monospace is-size-6 pad-top-s has-text-grey">Hint: Try saying "how many grams is 1 ratti?"
-        </h6>
       </div>
     </div>
 
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="AYUSH"
-      agent-id="2856095e-0eca-4e22-ab64-d6e12cd1bded" language-code="en"></df-messenger>
+    <df-messenger intent="WELCOME" chat-title="AYUSH" agent-id="2856095e-0eca-4e22-ab64-d6e12cd1bded"
+      language-code="en"></df-messenger>
   </div>
 </template>
 
@@ -275,13 +280,25 @@
     flex-direction: column;
   }
 
+  @media screen and (max-width: 992px) {
+    .hero-body {
+      padding-right: 0;
+      padding-left: 0;
+      padding-top: 0;
+    }
+
+    .outer {
+      padding-right: 0;
+    }
+  }
+
   df-messenger {
-   --df-messenger-bot-message: #878fac;
-   --df-messenger-button-titlebar-color: #000;
-   --df-messenger-chat-background-color: #fafafa;
-   --df-messenger-font-color: white;
-   --df-messenger-send-icon: #878fac;
-   --df-messenger-user-message: #479b3d;
+    --df-messenger-bot-message: #878fac;
+    --df-messenger-button-titlebar-color: #000;
+    --df-messenger-chat-background-color: #fafafa;
+    --df-messenger-font-color: white;
+    --df-messenger-send-icon: #878fac;
+    --df-messenger-user-message: #479b3d;
   }
 
   .control,
