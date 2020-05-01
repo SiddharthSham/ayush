@@ -8,13 +8,13 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
+    "gh": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
   },
   "dependencies": {
-    "bulma": "^0.8.0",
-    "nuxt": "^2.0.0"
+    "bulma": "^0.8.2",
+    "nuxt": "^2.12.2"
   },
   "devDependencies": {
-    "cross-env": "^7.0.0"
+    "cross-env": "^7.0.2"
   }
 }

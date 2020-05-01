@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <section class="hero is-fullheight">
-
+  <body class="has-navbar-fixed-top">
+    <section class="hero is-fullheight-with-navbar">
       <div class="hero-body">
         <div class="columns">
           <div class="column outer">
@@ -96,32 +95,14 @@
             </main>
           </div>
         </div>
-        <h1 class="is-family-monospace has-text-centered is-size-3 pad-top">OR</h1>
-        <h3 class="is-family-monospace has-text-centered">talk to the bot</h3>
-        <p class="is-family-monospace has-text-centered">&darr;</p>
       </div>
 
     </section>
-    <div class="hero is-fullheight">
-      <div class="hero-body">
-        <div class="columns">
-          <div class="column outer">
-            <div class="card">
-              <iframe class="bot" allow="microphone;"
-                src="https://console.dialogflow.com/api-client/demo/embedded/2856095e-0eca-4e22-ab64-d6e12cd1bded"></iframe>
-            </div>
-            <h6 class="is-family-monospace is-size-6 pad-top-s has-text-grey">Hint: Try saying "how many grams is 1
-              ratti?"
-            </h6>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger intent="WELCOME" chat-title="AYUSH" agent-id="2856095e-0eca-4e22-ab64-d6e12cd1bded"
       language-code="en"></df-messenger>
-  </div>
+  </body>
 </template>
 
 <script>
@@ -271,20 +252,24 @@
     font-family: 'Oswald'
   }
 
+  .columns {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
   .is-family-monospace {
     font-family: 'Roboto Mono'
   }
 
   .hero-body {
     justify-content: center;
-    flex-direction: column;
+    /* padding-top: 0; */
   }
 
   @media screen and (max-width: 992px) {
     .hero-body {
       padding-right: 0;
       padding-left: 0;
-      padding-top: 0;
     }
 
     .outer {
