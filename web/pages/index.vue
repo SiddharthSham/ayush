@@ -274,6 +274,7 @@
 
     .outer {
       padding-right: 0;
+      padding-left: 0;
     }
   }
 

@@ -28,6 +28,10 @@
             href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">
             Hospitals
           </a>
+          <a class="navbar-item is-size-6 is-family-monospace"
+            href="https://www.ayush.gov.in/" target="_blank">
+            More
+          </a>
         </div>
       </div>
     </nav>
