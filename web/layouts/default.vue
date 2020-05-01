@@ -16,7 +16,7 @@
       <div class="navbar-menu" :class="{'is-active': navVisible}">
         <div class="navbar-end">
           <a class="navbar-item is-size-4 is-family-monospace"
-            href="https://docs.google.com/spreadsheets/d/1UZ0KyGzdbbp3L_YStZLBMWfWBDVAgRQm2uiMIp1ZPCw/edit?usp=sharing"
+            href="https://docs.google.com/spreadsheets/d/1bT96_mFwXo3AP7zZyVmwYQpJDIIZvTY8Zk9KkEftuDU/edit?usp=sharing"
             target="_blank">
             Datasheet
           </a>
