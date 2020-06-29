@@ -96,8 +96,8 @@
                 "minute": 60,
                 "hour": 3600,
                 "day": 86400,
-                "month": 2592000,
-                "year": 31104000
+                "month": 2628000,
+                "year": 31540000
             },
             "length": {
 
@@ -360,8 +360,8 @@
                 "minute": 60,
                 "hour": 3600,
                 "day": 86400,
-                "month": 2592000,
-                "year": 31104000
+                "month": 2628000,
+                "year": 31540000
             },
             "length": {
                 "yavodara": 0.24,
@@ -417,8 +417,8 @@
                 "minute": 60,
                 "hour": 3600,
                 "day": 86400,
-                "month": 2592000,
-                "year": 31104000
+                "month": 2628000,
+                "year": 31540000
             },
             "length": {
                 "virarkadai": 1.95,
