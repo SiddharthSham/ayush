@@ -1,0 +1,20 @@
+{
+  "name": "ayush",
+  "version": "1.0.0",
+  "description": "Online Ayurvedic Unit Converter",
+  "author": "siddharthsham",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "gh": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate"
+  },
+  "dependencies": {
+    "bulma": "^0.8.2",
+    "nuxt": "^2.12.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
+}
