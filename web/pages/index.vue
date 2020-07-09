@@ -26,7 +26,7 @@
                       <div class="control">
                         <div class="select is-dark">
                           <select v-model="from">Units
-                            <option v-for="unit in frominator" :value="unit" :key="unit"> {{ unit }} </option>
+                            <option v-for="unit in compute_from" :value="unit" :key="unit"> {{ unit }} </option>
                           </select>
                         </div>
                       </div>
@@ -39,7 +39,7 @@
                       <div class="control">
                         <div class="select is-dark">
                           <select class="" v-model="to">Units
-                            <option v-for="unit in tonator" :value="unit" :key="unit"> {{ unit }} </option>
+                            <option v-for="unit in compute_to" :value="unit" :key="unit"> {{ unit }} </option>
                           </select>
                         </div>
 
@@ -54,7 +54,7 @@
                 <div class="columns">
                   <div class="column is-half">
                     <h5 class="subtitle has-text-grey is-size-5"> Using the {{ system }} system,
-                      <span v-if="authory"> Author: {{ author }}</span>
+                      <span v-if="compute_authors"> Author: {{ author }}</span>
                       <span v-else>, No author available</span>
                     </h5>
                   </div>
@@ -73,7 +73,7 @@
                       <div class="column is-4">
                         <div class="select is-dark">
                           <select class="" v-model="metric">Metric
-                            <option v-for="metric in metricator" :value="metric" :key="metric"> {{ metric }} </option>
+                            <option v-for="metric in compute_metrics" :value="metric" :key="metric"> {{ metric }} </option>
                           </select>
                         </div>
 
@@ -82,7 +82,7 @@
                         <div v-if="authors_arr">
                           <div class="select is-dark">
                             <select class="" v-model="author">Author
-                              <option v-for="author in authory" :value="author" :key="author"> {{ author }} </option>
+                              <option v-for="author in compute_authors" :value="author" :key="author"> {{ author }} </option>
                             </select>
                           </div>
 
@@ -98,16 +98,12 @@
       </div>
 
     </section>
-
-    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-    <df-messenger intent="WELCOME" chat-title="AYUSH" agent-id="2856095e-0eca-4e22-ab64-d6e12cd1bded"
-      language-code="en"></df-messenger>
   </body>
 </template>
 
 <script>
   import Card from '~/components/Card'
-  import * as data from '~/static/data.json';
+  import {old} from '~/static/data.js';
 
   export default {
     components: {
@@ -125,16 +121,16 @@
         in_value: 1,
         out_value: 8,
         to_arr: [],
-        flag: false,
+        sync_lock: false,
       }
     },
     methods: {
-      //populates the metrics array
-      fun_metricator: function () {
-        return this.metrics_arr = Object.keys(data.default[this.system][this.author]);
+      // populates the metrics array
+      populate_metrics: function () {
+        return this.metrics_arr = Object.keys(old[this.system][this.author]);
       },
-      //populates the authors array
-      fun_authory: function () {
+      // populates the authors array
+      populate_authors: function () {
         if (this.system === 'ayurveda') {
           this.author = 'api';
           if (this.metric === 'weight') {
@@ -151,13 +147,13 @@
         }
       },
       //populates the from array
-      fun_frominator: function () {
+      populate_from: function () {
         if (this.metric === 'weight') {
           this.from = 'gram'
           return this.from_arr = ['gram', 'kilogram']
         } else if (this.metric === 'length') {
-          this.from = 'meter'
-          return this.from_arr = ['centimeter', 'meter']
+          this.from = 'metre'
+          return this.from_arr = ['centimetre', 'metre']
         } else if (this.metric === 'time') {
           this.from = 'second'
           return this.from_arr = ['second', 'minute', 'hour', 'day', 'month', 'year']
@@ -167,9 +163,9 @@
         }
       },
       //populates the to array
-      fun_tonator: function () {
-        this.to = Object.keys(data.default[this.system][this.author][this.metric])[0];
-        return this.to_arr = Object.keys(data.default[this.system][this.author][this.metric]);
+      populate_to: function () {
+        this.to = Object.keys(old[this.system][this.author][this.metric])[0];
+        return this.to_arr = Object.keys(old[this.system][this.author][this.metric]);
       },
       //calculates the converted value
       convert: function (value, bool) {
@@ -178,62 +174,63 @@
         if (bool) {
           [switch_from, switch_to] = [switch_to, switch_from]
         }
-        let temp_from = data.default[this.system][this.author][this.metric][switch_from];
-        let temp_to = data.default[this.system][this.author][this.metric][switch_to];
+        let temp_from = old[this.system][this.author][this.metric][switch_from];
+        let temp_to = old[this.system][this.author][this.metric][switch_to];
+        console.log(old[this.system][this.author][this.metric], switch_from)
         return value * temp_from / temp_to;
       },
       //resets the input/output values
       clear: function () {
-        this.in_value = 0;
-        this.out_value = 0;
+        this.in_value = 1;
+        this.out_value = 8;
         this.author = 'api';
-      }
+      },
     },
     //computes the required option fields
     computed: {
-      metricator: function () {
-        return this.fun_metricator()
+      compute_metrics: function () {
+        return this.populate_metrics()
       },
-      authory: function () {
+      compute_authors: function () {
         this.clear();
-        return this.fun_authory();
+        return this.populate_authors();
       },
-      frominator: function () {
-        return this.fun_frominator()
+      compute_from: function () {
+        return this.populate_from()
       },
-      tonator: function () {
-        return this.fun_tonator()
+      compute_to: function () {
+        return this.populate_to()
       }
     },
-    //watches for user input 
+    // watches for user input 
     watch: {
       system: function () {
         this.clear();
-        this.fun_metricator();
+        this.populate_metrics();
       },
       in_value: function () {
-        if (!this.flag) {
+        if (!this.sync_lock) {
           this.out_value = this.convert(this.in_value, false)
         }
-        this.flag = !this.flag
+        this.sync_lock = !this.sync_lock
       },
       from: function () {
-        if (!this.flag) {
+        if (!this.sync_lock) {
           this.out_value = this.convert(this.in_value, false)
         }
-        this.flag = !this.flag
+        this.sync_lock = !this.sync_lock
       },
       out_value: function () {
-        if (!this.flag) {
+        if (!this.sync_lock) {
           this.in_value = this.convert(this.out_value, true)
         }
-        this.flag = !this.flag
+        this.sync_lock = !this.sync_lock
       },
       to: function () {
-        if (!this.flag) {
+        if (!this.sync_lock) {
           this.in_value = this.convert(this.out_value, true)
         }
-        this.flag = !this.flag
+        this.sync_lock = !this.sync_lock
       }
     },
     mounted() {
@@ -263,7 +260,6 @@
 
   .hero-body {
     justify-content: center;
-    /* padding-top: 0; */
   }
 
   @media screen and (max-width: 992px) {
@@ -276,15 +272,6 @@
       padding-right: 0;
       padding-left: 0;
     }
-  }
-
-  df-messenger {
-    --df-messenger-bot-message: #878fac;
-    --df-messenger-button-titlebar-color: #000;
-    --df-messenger-chat-background-color: #fafafa;
-    --df-messenger-font-color: white;
-    --df-messenger-send-icon: #878fac;
-    --df-messenger-user-message: #479b3d;
   }
 
   .control,

@@ -1,4 +1,4 @@
-{
+export const old = {
     "ayurveda": {
         "charaka": {
             "weight": {
@@ -482,4 +482,4 @@
             }
         }
     }
-}
+};
