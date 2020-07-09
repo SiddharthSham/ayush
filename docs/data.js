@@ -96,8 +96,8 @@ export const old = {
                 "minute": 60,
                 "hour": 3600,
                 "day": 86400,
-                "month": 2592000,
-                "year": 15552000
+                "month": 2628000,
+                "year": 31540000
             },
             "length": {
 
@@ -174,7 +174,7 @@ export const old = {
                 "vahi": 49152,
                 "goni": 49152,
                 "bhara": 96000,
-                "khari": 190608,
+                "khari": 196608,
                 "gram": 1,
                 "kilogram": 1000
 
@@ -199,11 +199,11 @@ export const old = {
                 "valla": 0.375,
                 "nishpava": 0.250,
                 "masha": 0.750,
-                "shana": 0.3,
-                "nishka": 0.3,
-                "kala": 0.3,
-                "kola": 0.6,
-                "vataka": 0.6,
+                "shana": 3,
+                "nishka": 3,
+                "kala": 3,
+                "kola": 6,
+                "vataka": 6,
                 "suvarna": 12,
                 "dharana": 1.5,
                 "karsha": 12,
@@ -360,8 +360,8 @@ export const old = {
                 "minute": 60,
                 "hour": 3600,
                 "day": 86400,
-                "month": 2592000,
-                "year": 15552000
+                "month": 2628000,
+                "year": 31540000
             },
             "length": {
                 "yavodara": 0.24,
@@ -411,14 +411,14 @@ export const old = {
                 "paksam": 1296000,
                 "matam": 2592000,
                 "mandalam": 3888000,
-                "kalam": 5259492,
-                "ayanam": 15778476,
+                "kalam": 5184000,
+                "ayanam": 15552000,
                 "second": 1,
                 "minute": 60,
                 "hour": 3600,
                 "day": 86400,
-                "month": 2592000,
-                "year": 15552000
+                "month": 2628000,
+                "year": 31540000
             },
             "length": {
                 "virarkadai": 1.95,
@@ -431,7 +431,7 @@ export const old = {
                 "inch": 2.54
             },
             "volume": {
-                "nel": 0.093,
+                "nel": 0.09333,
                 "codu": 33.6,
                 "azakku": 168,
                 "uzakku": 336,
@@ -446,7 +446,7 @@ export const old = {
                 "kalam": 64500,
                 "millilitre": 1,
                 "litre": 1000,
-                "tekkarandi": 3.697,
+                "tekkarandi": 3.69667,
                 "kuppikarandi": 709.765,
                 "tirttakkarandi": 1.33,
                 "ney karanda": 4.0,
