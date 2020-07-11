@@ -16,20 +16,21 @@
       <div class="navbar-menu" :class="{'is-active': navVisible}">
         <div class="navbar-end">
           <a class="navbar-item is-size-6 is-family-monospace"
-            href="https://docs.google.com/spreadsheets/d/1bT96_mFwXo3AP7zZyVmwYQpJDIIZvTY8Zk9KkEftuDU/edit?usp=sharing"
+            href="https://www.youtube.com/results?search_query=ayurveda"
+            rel="noreferrer noopener" 
             target="_blank">
-            Datasheet
-          </a>
-          <a class="navbar-item is-size-6 is-family-monospace"
-            href="https://www.youtube.com/results?search_query=ayurveda" target="_blank">
             Videos
           </a>
           <a class="navbar-item is-size-6 is-family-monospace"
-            href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">
+            href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me"
+            rel="noreferrer noopener" 
+            target="_blank">
             Hospitals
           </a>
           <a class="navbar-item is-size-6 is-family-monospace"
-            href="https://www.ayush.gov.in/" target="_blank">
+            href="https://www.ayush.gov.in/"
+            rel="noreferrer noopener"
+            target="_blank">
             More
           </a>
         </div>
